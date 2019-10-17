@@ -10,25 +10,91 @@
 </head>
 <body class="">
     <!-- Vue.js コンテナ -->
-    <div id="app" class="m-5">
-        <mycomp />
-    </div>
+    <table id="app" class="table table-striped">
+        <thead class="thead-dark">
+            <tr>
+                <th>item</th>
+                <th>info</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th>TrimTime</th>
+                <th><trimtime /></th>
+            </tr>
+            <tr>
+                <th>Size</th>
+                <th><size /></th>
+            </tr>
+            <tr>
+                <th>Option</th>
+                <th><editoption /></th>
+                </tr>
+            </tbody>
+    </table>
 
-    <!-- コンポーネントのテンプレート -->
-    <script type="text/x-template" id="mycomp-template">
-        <div>{{msg}}</div>
+    <!-- コンポーネントのデータ -->
+    <script>
+    var func=function(){
+        return {
+            trim:{
+                start:"00:05:00.000",
+                end:"00:30:00.000",
+                duration:"00:25:00.000"
+            },
+            size:{
+                x:480,
+                y:360
+            },
+            option:{
+                fadein:"00:00:05.000",
+                fadeout:"00:00:10.000"
+            }
+        };
+    }
     </script>
 
-    <!-- コンポーネントのスクリプト -->
+    <!-- trimtime コンポーネントのテンプレート、スクリプト -->
+    <script type="text/x-template" id="trimtime-template">
+        <div>{{trim.duration}} [{{trim.start}} - {{trim.end}}]</div>
+    </script>
     <script>
-    Vue.component('mycomp', {
-        template:'#mycomp-template',
+    Vue.component('trimtime', {
+        template:'#trimtime-template',
         data:function(){
-            return {msg:"This is Mycomp-component!"};
+            return func();
         }
     });
+    </script>
 
-    // Vue.js オブジェクト作成
+    <!-- size コンポーネントのテンプレート、スクリプト -->
+    <script type="text/x-template" id="size-template">
+        <div>{{size.x}} x {{size.y}}</div>
+    </script>
+    <script>
+    Vue.component('size', {
+        template:'#size-template',
+        data:function(){
+            return func();
+        }
+    });
+    </script>
+
+    <!-- editoption コンポーネントのテンプレート、スクリプト -->
+    <script type="text/x-template" id="editoption-template">
+        <div>fadein:{{option.fadein}} / fadeout:{{option.fadeout}}</div>
+    </script>
+    <script>
+    Vue.component('editoption', {
+        template:'#editoption-template',
+        data:function(){
+            return func();
+        }
+    });
+    </script>
+
+    <!-- Vue.js オブジェクト作成 -->
+    <script>
     new Vue({
         el:'#app'
     });
