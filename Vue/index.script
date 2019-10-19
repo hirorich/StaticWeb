@@ -1,44 +1,35 @@
 // データ定義
 var data1= {
-    trim:{
-        start:"00:05:00.000",
-        end:"00:30:00.000",
-        duration:"00:25:00.000"
-    },
-    size:{
-        x:480,
-        y:360
-    },
-    option:{
-        fadein:"00:00:05.000",
-        fadeout:"00:00:10.000"
-    }
+    start:"00:05:00.000",
+    end:"00:30:00.000",
+    duration:"00:25:00.000",
+    x:480,
+    y:360,
+    fadein:"00:00:05.000",
+    fadeout:"00:00:10.000"
 }
 var data2= {
-    trim:{
-        start:"00:10:00.000",
-        end:"00:25:00.000",
-        duration:"00:15:00.000"
-    },
-    size:{
-        x:800,
-        y:600
-    },
-    option:{
-        fadein:"00:00:10.000",
-        fadeout:"00:00:05.000"
+    start:"00:10:00.000",
+    end:"00:25:00.000",
+    duration:"00:15:00.000",
+    x:800,
+    y:600,
+    fadein:"00:00:10.000",
+    fadeout:"00:00:05.000"
+}
+var data=[data1, data2]
+var func=function(val){
+    if(val>=0 && val<data.length){
+        return data[val];
     }
 }
-var func=function(){
-    return data;
-}
 var func2=function(){
-    if (vm.id==data1.size.x){
-        data=data2;
-        vm.id=data2.size.x;
+    if (vm.id==0){
+        vm.id=1;
+    }else if (vm.id==1){
+        vm.id=2;
     }else{
-        data=data1;
-        vm.id=data1.size.x;
+        vm.id=0;
     }
 }
 
@@ -46,7 +37,7 @@ var func2=function(){
 var vm=new Vue({
     el:'#app',
     data:{
-        id:'',
+        id:0,
         start:'00:00:00.000',
         end:'00:00:00.000',
         duration:'00:00:00.000',
@@ -56,15 +47,15 @@ var vm=new Vue({
         fadeout:'00:00:00.000'
     },
     watch:{
-        id:function(e){
-            tmp=func()
-            this.start=tmp.trim.start
-            this.end=tmp.trim.end
-            this.duration=tmp.trim.duration
-            this.x=tmp.size.x
-            this.y=tmp.size.y
-            this.fadein=tmp.option.fadein
-            this.fadeout=tmp.option.fadeout
+        id:function(val){
+            tmp=func(val)
+            this.start=tmp.start
+            this.end=tmp.end
+            this.duration=tmp.duration
+            this.x=tmp.x
+            this.y=tmp.y
+            this.fadein=tmp.fadein
+            this.fadeout=tmp.fadeout
         }
     }
 });
