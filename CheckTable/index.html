@@ -22,15 +22,17 @@
                     <th>Option</th>
                 </tr>
             </thead>
-            <tbody v-for="(item, index) in items">
-                <tr v-for="(data_i, index_i) in item.datas">
-                    <th v-if="index_i==0" rowspan="2"><input type="checkbox" v-model="item.checked"></th>
-                    <th v-if="index_i==0" rowspan="2" @click="select(item)">{{index}}</th>
-                    <th v-if="index_i==0" rowspan="2" @click="select(item)">{{item.id}}</th>
-                    <th @click="select(item)">{{data_i.x}} x {{data_i.y}}</th>
-                    <th @click="select(item)">{{data_i.duration}} [{{data_i.start}} - {{data_i.end}}]</th>
-                    <th @click="select(item)">fadein: {{data_i.fadein}} / fadeout: {{data_i.fadeout}}</th>
-                </tr>
+            <tbody>
+                <template v-for="(item, index) in items">
+                    <tr v-for="(data_i, index_i) in item.datas">
+                        <th><input type="checkbox" v-model="item.checked"></th>
+                        <th @click="select(item)">{{index}}</th>
+                        <th @click="select(item)">{{item.id}}</th>
+                        <th @click="select(item)">{{data_i.x}} x {{data_i.y}}</th>
+                        <th @click="select(item)">{{data_i.duration}} [{{data_i.start}} - {{data_i.end}}]</th>
+                        <th @click="select(item)">fadein: {{data_i.fadein}} / fadeout: {{data_i.fadeout}}</th>
+                    </tr>
+                </template>
             </tbody>
         </table>
     </div>
