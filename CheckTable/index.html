@@ -11,12 +11,11 @@
 <body class="">
     <!-- Table -->
     <div id="app">
-        <table class="table table-striped table-bordered">
+        <table class="table table-bordered">
             <thead class="thead-dark">
                 <tr>
                     <th>chk</th>
                     <th>No.</th>
-                    <th>ID</th>
                     <th>Size</th>
                     <th>TrimTime</th>
                     <th>Option</th>
@@ -27,7 +26,6 @@
                     <tr v-for="(data_i, index_i) in item.datas">
                         <th v-if="index_i==0" :rowspan="item.datas.length"><input type="checkbox" v-model="item.checked"></th>
                         <th v-if="index_i==0" :rowspan="item.datas.length" @click="select(item)">{{index}}</th>
-                        <th v-if="index_i==0" :rowspan="item.datas.length" @click="select(item)">{{item.id}}</th>
                         <th @click="select(item)">{{data_i.x}} x {{data_i.y}}</th>
                         <th @click="select(item)">{{data_i.duration}} [{{data_i.start}} - {{data_i.end}}]</th>
                         <th @click="select(item)">fadein: {{data_i.fadein}} / fadeout: {{data_i.fadeout}}</th>
