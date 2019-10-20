@@ -14,30 +14,15 @@
         <table class="table table-striped table-bordered">
             <thead class="thead-dark">
                 <tr>
-                    <th>No.</th>
-                    <th>Size</th>
-                    <th>TrimTime</th>
-                    <th>Option</th>
+                    <th>SampleLink</th>
                 </tr>
             </thead>
             <tbody>
                 <tr v-for="(item, index) in items">
-                    <th>{{index}}</th>
-                    <th>{{item.x}} x {{item.y}}</th>
-                    <th>{{item.duration}} [{{item.start}} - {{item.end}}]</th>
-                    <th>fadein: {{item.fadein}} / fadeout: {{item.fadeout}}</th>
+                    <th><a :href="item.url">{{item.name}}</a></th>
                 </tr>
             </tbody>
         </table>
-    </div>
-
-    <!-- Button -->
-    <div>
-        <input type="button" value="push!!" onclick=add()>
-        <input type="button" value="change!!" onclick=change()>
-        <input type="button" value="delete!!" onclick=del()>
-        <input type="button" value="swap!!" onclick=swap()>
-        <input type="button" value="insert!!" onclick=insert(1)>
     </div>
 
     <!-- Vue定義 -->

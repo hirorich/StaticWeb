@@ -18,7 +18,7 @@ var data2= {
     fadeout:"00:00:05.000"
 }
 var add=function(){
-    Vue.set(vm.items, vm.items.length, data1);
+    insert(vm.items.length);
 }
 var change=function(){
     if (vm.items.length > 0) {
@@ -27,6 +27,11 @@ var change=function(){
 }
 var del=function(){
     vm.items.splice(vm.items.length-1, 1);
+}
+var insert=function(index){
+    if (index >= 0 && index <=vm.items.length) {
+        vm.items.splice(index, 0, data1);
+    }
 }
 var swap=function(){
     if (vm.items.length-1 > 0) {
