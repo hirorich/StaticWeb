@@ -14,6 +14,7 @@
         <table class="table table-striped table-bordered">
             <thead class="thead-dark">
                 <tr>
+                    <th>chk</th>
                     <th>No.</th>
                     <th>ID</th>
                     <th>Size</th>
@@ -23,11 +24,12 @@
             </thead>
             <tbody v-for="(item, index) in items">
                 <tr v-for="data_i in item.datas">
-                    <th>{{index}}</th>
-                    <th>{{item.id}}</th>
-                    <th>{{data_i.x}} x {{data_i.y}}</th>
-                    <th>{{data_i.duration}} [{{data_i.start}} - {{data_i.end}}]</th>
-                    <th>fadein: {{data_i.fadein}} / fadeout: {{data_i.fadeout}}</th>
+                    <th><input type="checkbox" v-model="item.checked"></th>
+                    <th @click="select(item)">{{index}}</th>
+                    <th @click="select(item)">{{item.id}}</th>
+                    <th @click="select(item)">{{data_i.x}} x {{data_i.y}}</th>
+                    <th @click="select(item)">{{data_i.duration}} [{{data_i.start}} - {{data_i.end}}]</th>
+                    <th @click="select(item)">fadein: {{data_i.fadein}} / fadeout: {{data_i.fadeout}}</th>
                 </tr>
             </tbody>
         </table>

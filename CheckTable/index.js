@@ -36,21 +36,29 @@ var vm=new Vue({
                 id:'a',
                 datas:[
                     data1
-                ]
+                ],
+                checked:false
             },
             {
                 id:'b',
                 datas:[
                     data2,
                     data3
-                ]
+                ],
+                checked:true
             },
             {
                 id:'c',
                 datas:[
                     data2
-                ]
+                ],
+                checked:false
             }
         ]
+    },
+    methods:{
+        select: function(item) {
+            item.checked=!item.checked;
+        }
     }
 });
