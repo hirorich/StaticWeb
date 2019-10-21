@@ -56,7 +56,11 @@ var vm=new Vue({
     },
     methods:{
         select: function(item) {
-            vm.checkid=item.id;
+            if (this.checkid==item.id) {
+                this.checkid='';
+            } else {
+                this.checkid=item.id;
+            }
         }
     }
 });
