@@ -23,7 +23,7 @@
             </thead>
             <tbody>
                 <template v-for="(item, index) in items">
-                    <tr v-for="(data_i, index_i) in item.datas">
+                    <tr v-for="(data_i, index_i) in item.datas" :class="{'bg-primary': item.checked}">
                         <template v-if="index_i==0">
                             <th :rowspan="item.datas.length"><input type="checkbox" v-model="item.checked"></th>
                             <th :rowspan="item.datas.length" @click="select(item)">{{index}}</th>
