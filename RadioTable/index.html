@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <title>Document</title>
+</head>
+<body class="">
+    <!-- Table -->
+    <div id="app">
+        <table class="table table-bordered">
+            <thead class="thead-dark">
+                <tr>
+                    <th>chk</th>
+                    <th>No.</th>
+                    <th>Size</th>
+                    <th>TrimTime</th>
+                    <th>Option</th>
+                </tr>
+            </thead>
+            <tbody>
+                <template v-for="(item, index) in items">
+                    <tr v-for="(data_i, index_i) in item.datas" :class="{'bg-primary': (checkid==item.id)}">
+                        <template v-if="index_i==0">
+                            <th :rowspan="item.datas.length"><input type="radio" v-model="checkid" :value="item.id"></th>
+                            <th :rowspan="item.datas.length" @click="select(item)">{{index}}</th>
+                        </template>
+                        <th @click="select(item)">{{data_i.x}} x {{data_i.y}}</th>
+                        <th @click="select(item)">{{data_i.duration}} [{{data_i.start}} - {{data_i.end}}]</th>
+                        <th @click="select(item)">fadein: {{data_i.fadein}} / fadeout: {{data_i.fadeout}}</th>
+                    </tr>
+                </template>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Vue定義 -->
+    <script src="index.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+</body>
+</html>

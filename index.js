@@ -14,6 +14,10 @@ var vm=new Vue({
             {
                 name:'CheckTable',
                 url:'./CheckTable/'
+            },
+            {
+                name:'RadioTable',
+                url:'./RadioTable/'
             }
         ]
     }
