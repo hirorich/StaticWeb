@@ -9,34 +9,32 @@
     <link rel="stylesheet" type="text/css" href="../common/v-cloak.css">
     <title>Document</title>
 </head>
-<body class="">
+<body>
     <!-- Table -->
-    <div id="app">
-        <table class="table table-bordered">
-            <thead class="thead-dark">
-                <tr>
-                    <th>chk</th>
-                    <th>No.</th>
-                    <th>Size</th>
-                    <th>TrimTime</th>
-                    <th>Option</th>
+    <table class="table table-bordered">
+        <thead class="thead-dark">
+            <tr>
+                <th>chk</th>
+                <th>No.</th>
+                <th>Size</th>
+                <th>TrimTime</th>
+                <th>Option</th>
+            </tr>
+        </thead>
+        <tbody id="app" v-cloak>
+            <template v-for="(item, index) in items">
+                <tr v-for="(data_i, index_i) in item.datas" :class="{'bg-primary': (checkid==item.id)}">
+                    <template v-if="index_i==0">
+                        <th :rowspan="item.datas.length"><input type="radio" v-model="checkid" :value="item.id"></th>
+                        <th :rowspan="item.datas.length" @click="select(item)">{{index}}</th>
+                    </template>
+                    <th @click="select(item)">{{data_i.x}} x {{data_i.y}}</th>
+                    <th @click="select(item)">{{data_i.duration}} [{{data_i.start}} - {{data_i.end}}]</th>
+                    <th @click="select(item)">fadein: {{data_i.fadein}} / fadeout: {{data_i.fadeout}}</th>
                 </tr>
-            </thead>
-            <tbody>
-                <template v-for="(item, index) in items">
-                    <tr v-for="(data_i, index_i) in item.datas" :class="{'bg-primary': (checkid==item.id)}">
-                        <template v-if="index_i==0">
-                            <th :rowspan="item.datas.length"><input type="radio" v-model="checkid" :value="item.id"></th>
-                            <th :rowspan="item.datas.length" @click="select(item)">{{index}}</th>
-                        </template>
-                        <th @click="select(item)">{{data_i.x}} x {{data_i.y}}</th>
-                        <th @click="select(item)">{{data_i.duration}} [{{data_i.start}} - {{data_i.end}}]</th>
-                        <th @click="select(item)">fadein: {{data_i.fadein}} / fadeout: {{data_i.fadeout}}</th>
-                    </tr>
-                </template>
-            </tbody>
-        </table>
-    </div>
+            </template>
+        </tbody>
+    </table>
 
     <!-- Vue定義 -->
     <script src="index.js"></script>
