@@ -9,28 +9,26 @@
     <link rel="stylesheet" type="text/css" href="../common/v-cloak.css">
     <title>Document</title>
 </head>
-<body class="">
+<body>
     <!-- Table -->
-    <div id="app">
-        <table class="table table-striped table-bordered">
-            <thead class="thead-dark">
-                <tr>
-                    <th>No.</th>
-                    <th>Size</th>
-                    <th>TrimTime</th>
-                    <th>Option</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr v-for="(item, index) in items">
-                    <th>{{index}}</th>
-                    <th>{{item.x}} x {{item.y}}</th>
-                    <th>{{item.duration}} [{{item.start}} - {{item.end}}]</th>
-                    <th>fadein: {{item.fadein}} / fadeout: {{item.fadeout}}</th>
-                </tr>
-            </tbody>
-        </table>
-    </div>
+    <table class="table table-striped table-bordered">
+        <thead class="thead-dark">
+            <tr>
+                <th>No.</th>
+                <th>Size</th>
+                <th>TrimTime</th>
+                <th>Option</th>
+            </tr>
+        </thead>
+        <tbody id="app" v-cloak>
+            <tr v-for="(item, index) in items">
+                <th>{{index}}</th>
+                <th>{{item.x}} x {{item.y}}</th>
+                <th>{{item.duration}} [{{item.start}} - {{item.end}}]</th>
+                <th>fadein: {{item.fadein}} / fadeout: {{item.fadeout}}</th>
+            </tr>
+        </tbody>
+    </table>
 
     <!-- Button -->
     <div>
