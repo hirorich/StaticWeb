@@ -22,6 +22,14 @@ var vm=new Vue({
             {
                 name:'RadioTable',
                 url:'./RadioTable/'
+            },
+            {
+                name:'Bootstrap-Tabs',
+                url:'./Bootstrap-Tabs/'
+            },
+            {
+                name:'Vue-Tabs',
+                url:'./Vue-Tabs/'
             }
         ]
     }
