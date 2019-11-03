@@ -8,6 +8,10 @@ var vm=new Vue({
                 url:'./Vue/'
             },
             {
+                name:'Vue-Tabs',
+                url:'./Vue-Tabs/'
+            },
+            {
                 name:'Table',
                 url:'./Table/'
             },
@@ -18,6 +22,14 @@ var vm=new Vue({
             {
                 name:'RadioTable',
                 url:'./RadioTable/'
+            },
+            {
+                name:'Bootstrap-Tabs',
+                url:'./Bootstrap-Tabs/'
+            },
+            {
+                name:'Vue-Tabs',
+                url:'./Vue-Tabs/'
             }
         ]
     }
