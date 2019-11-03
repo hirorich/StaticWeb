@@ -36,9 +36,18 @@ var vm=new Vue({
     data:{
         checkNo:0,
         items:[
-            data1,
-            data2,
-            data3
+            {
+                data:data1,
+                selected:true
+            },
+            {
+                data:data2,
+                selected:false
+            },
+            {
+                data:data3,
+                selected:false
+            }
         ]
     }
 });
