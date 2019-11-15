@@ -16,6 +16,10 @@ var vm=new Vue({
                 url:'./Table/'
             },
             {
+                name:'ScrollTable',
+                url:'./ScrollTable/'
+            },
+            {
                 name:'CheckTable',
                 url:'./CheckTable/'
             },
