@@ -8,12 +8,16 @@ var vm=new Vue({
                 url:'./Vue/'
             },
             {
-                name:'Vue-Tabs',
-                url:'./Vue-Tabs/'
+                name:'Transition',
+                url:'./Transition/'
             },
             {
                 name:'Table',
                 url:'./Table/'
+            },
+            {
+                name:'ScrollTable',
+                url:'./ScrollTable/'
             },
             {
                 name:'CheckTable',

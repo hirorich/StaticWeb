@@ -1,0 +1,14 @@
+.app-item {
+    transition: all 1s;
+    display: inline-block;
+    margin-right: 10px;
+}
+
+/* 要素の追加・削除時のトランジション指定 */
+.transition-list-enter, .transition-list-leave-to {
+    opacity: 0;
+    transform: translateY(30px);
+}
+.transition-list-leave-active {
+    position: absolute;
+}
