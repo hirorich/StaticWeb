@@ -8,10 +8,6 @@ var vm=new Vue({
                 url:'./Vue/'
             },
             {
-                name:'Vue-Tabs',
-                url:'./Vue-Tabs/'
-            },
-            {
                 name:'Table',
                 url:'./Table/'
             },
