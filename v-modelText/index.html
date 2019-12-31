@@ -12,9 +12,13 @@
 <body>
     <!-- 入力欄 -->
     <div id="inputinfo" v-cloak>
+        <div class="form-group">
+            <span class="label label-default">filename</span>
+            <input v-model="info.filename" type="text" class="form-control">
+            <span class="label label-default">link</span>
+            <input v-model="info.link" type="text" class="form-control">
+        </div>
         <button class="btn btn-primary" v-on:click="push()">push!!</button class="btn btn-primary">
-        <input v-model="info.filename" type="text">
-        <input v-model="info.link" type="text">
     </div>
 
     <!-- Table -->
