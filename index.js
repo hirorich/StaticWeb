@@ -28,6 +28,10 @@ var vm=new Vue({
                 url:'./RadioTable/'
             },
             {
+                name:'AddableTable',
+                url:'./v-modelText/'
+            },
+            {
                 name:'Bootstrap-Tabs',
                 url:'./Bootstrap-Tabs/'
             },
