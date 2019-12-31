@@ -27,6 +27,7 @@
             <tr>
                 <th>No.</th>
                 <th>delete</th>
+                <th>open</th>
                 <th>filename</th>
                 <th>link</th>
             </tr>
@@ -35,6 +36,7 @@
             <tr v-for="(item, index) in items">
                 <th>{{index}}</th>
                 <th><button class="btn btn-primary" v-on:click="del(index)">delete!!</button class="btn btn-primary"></th>
+                <th><button class="btn btn-primary" v-on:click="open(index)">open!!</button class="btn btn-primary"></th>
                 <th>{{item.filename}}</th>
                 <th>{{item.link}}</th>
             </tr>

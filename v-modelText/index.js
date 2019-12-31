@@ -30,6 +30,12 @@ var vm=new Vue({
             if (index >= 0 && index <this.items.length) {
                 this.items.splice(index, 1);
             }
+        },
+        open: function(index){
+            if (index >= 0 && index <this.items.length) {
+                var link=this.items[index].link;
+                window.open(link, '_blank')
+            }
         }
     }
 });
