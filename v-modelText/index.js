@@ -23,7 +23,17 @@ var inputinfo=new Vue({
 var vm=new Vue({
     el:'#app',
     data:{
-        items:[]
+        server:"https://www.youtube.com/user",
+        items:[
+            {
+                filename:"任天堂",
+                link:"/NintendoJPofficial/videos"
+            },
+            {
+                filename:"アニプレックス",
+                link:"/aniplex/videos"
+            }
+        ]
     },
     methods:{
         del: function(index){
@@ -34,7 +44,8 @@ var vm=new Vue({
         open: function(index){
             if (index >= 0 && index <this.items.length) {
                 var link=this.items[index].link;
-                window.open(link, '_blank')
+                var url=this.server + link
+                window.open(url, '_blank')
             }
         }
     }
