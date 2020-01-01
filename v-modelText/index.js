@@ -9,11 +9,11 @@ var inputinfo=new Vue({
     },
     methods:{
         push: function(){
-            var data={
+            var linkinfo={
                 filename:this.info.filename,
                 link:this.info.link
             }
-            vm.items.splice(vm.items.length, 0, data);
+            vm.items.splice(vm.items.length, 0, linkinfo);
             this.info.filename="";
             this.info.link="";
         }
@@ -23,15 +23,14 @@ var inputinfo=new Vue({
 var vm=new Vue({
     el:'#app',
     data:{
-        server:"https://www.youtube.com/user",
         items:[
             {
                 filename:"任天堂",
                 link:"/NintendoJPofficial/videos"
             },
             {
-                filename:"アニプレックス",
-                link:"/aniplex/videos"
+                filename:"輝夜月",
+                link:"/UCQYADFw7xEJ9oZSM5ZbqyBw/videos"
             }
         ]
     },
@@ -43,8 +42,14 @@ var vm=new Vue({
         },
         open: function(index){
             if (index >= 0 && index <this.items.length) {
-                var link=this.items[index].link;
-                var url=this.server + link
+                var linkinfo=this.items[index];
+
+                // filename をクリップボードにコピーする
+                copyTextToClipboard(linkinfo.filename);
+
+                // link を別タブで開く
+                var link=linkinfo.link;
+                var url=serverinfo.servers[serverinfo.checkserver] + link
                 window.open(url, '_blank')
             }
         }
