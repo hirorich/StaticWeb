@@ -20,18 +20,28 @@ var inputinfo=new Vue({
     }
 });
 
+var serverinfo=new Vue({
+    el:'#serverinfo',
+    data:{
+        checkserver:0,
+        servers:[
+            "https://www.youtube.com/user",
+            "https://www.youtube.com/channel"
+        ]
+    }
+});
+
 var vm=new Vue({
     el:'#app',
     data:{
-        server:"https://www.youtube.com/user",
         items:[
             {
                 filename:"任天堂",
                 link:"/NintendoJPofficial/videos"
             },
             {
-                filename:"アニプレックス",
-                link:"/aniplex/videos"
+                filename:"輝夜月",
+                link:"/UCQYADFw7xEJ9oZSM5ZbqyBw/videos"
             }
         ]
     },
@@ -50,7 +60,7 @@ var vm=new Vue({
 
                 // link を別タブで開く
                 var link=linkinfo.link;
-                var url=this.server + link
+                var url=serverinfo.servers[serverinfo.checkserver] + link
                 window.open(url, '_blank')
             }
         }

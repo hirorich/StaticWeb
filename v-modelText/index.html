@@ -18,9 +18,25 @@
             <input v-model="info.filename" type="text" class="form-control">
             <span class="label label-default">link</span>
             <input v-model="info.link" type="text" class="form-control">
+            <button class="btn btn-primary" v-on:click="push()">push!!</button class="btn btn-primary">
         </div>
-        <button class="btn btn-primary" v-on:click="push()">push!!</button class="btn btn-primary">
     </div>
+
+    <!-- 接続先 -->
+    <table class="table table-striped table-bordered">
+        <thead class="thead-dark">
+            <tr>
+                <th>chk</th>
+                <th>server</th>
+            </tr>
+        </thead>
+        <tbody id="serverinfo" v-cloak>
+            <tr v-for="(server, index) in servers">
+                <th><input type="radio" v-model="checkserver" :value="index"></th>
+                <th>{{server}}</th>
+            </tr>
+        </tbody>
+    </table>
 
     <!-- Table -->
     <table class="table table-striped table-bordered">
