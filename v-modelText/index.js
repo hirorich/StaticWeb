@@ -11,7 +11,7 @@ var inputinfo=new Vue({
         push: function(){
             var linkinfo={
                 filename:this.info.filename,
-                link:this.info.link
+                link:this.info.link.replace('\\/', '/')
             }
             vm.items.splice(vm.items.length, 0, linkinfo);
             this.info.filename="";
