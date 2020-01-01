@@ -20,17 +20,6 @@ var inputinfo=new Vue({
     }
 });
 
-var serverinfo=new Vue({
-    el:'#serverinfo',
-    data:{
-        checkserver:0,
-        servers:[
-            "https://www.youtube.com/user",
-            "https://www.youtube.com/channel"
-        ]
-    }
-});
-
 var vm=new Vue({
     el:'#app',
     data:{
