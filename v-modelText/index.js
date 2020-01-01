@@ -9,11 +9,11 @@ var inputinfo=new Vue({
     },
     methods:{
         push: function(){
-            var data={
+            var linkinfo={
                 filename:this.info.filename,
                 link:this.info.link
             }
-            vm.items.splice(vm.items.length, 0, data);
+            vm.items.splice(vm.items.length, 0, linkinfo);
             this.info.filename="";
             this.info.link="";
         }
@@ -43,7 +43,13 @@ var vm=new Vue({
         },
         open: function(index){
             if (index >= 0 && index <this.items.length) {
-                var link=this.items[index].link;
+                var linkinfo=this.items[index];
+
+                // filename をクリップボードにコピーする
+                copyTextToClipboard(linkinfo.filename);
+
+                // link を別タブで開く
+                var link=linkinfo.link;
                 var url=this.server + link
                 window.open(url, '_blank')
             }
