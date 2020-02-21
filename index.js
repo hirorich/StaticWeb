@@ -1,6 +1,6 @@
 // Vue.js オブジェクト作成
 var vm=new Vue({
-    el:'#sampleApp',
+    el:'#app',
     data:{
         items:[
             {
