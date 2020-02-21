@@ -7,5 +7,10 @@ var serverinfo=new Vue({
             "https://www.youtube.com/user",
             "https://www.youtube.com/channel"
         ]
+    },
+    watch:{
+        checkserver:function(){
+            vm.server=this.servers[this.checkserver];
+        }
     }
 });

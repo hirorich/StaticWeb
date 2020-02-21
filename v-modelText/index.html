@@ -46,6 +46,7 @@
                 <th>delete</th>
                 <th>open</th>
                 <th>filename</th>
+                <th>url</th>
                 <th>link</th>
             </tr>
         </thead>
@@ -55,6 +56,7 @@
                 <th><button class="btn btn-primary" v-on:click="del(index)">delete!!</button class="btn btn-primary"></th>
                 <th><button class="btn btn-primary" v-on:click="open(index)">open!!</button class="btn btn-primary"></th>
                 <th>{{item.filename}}</th>
+                <th>{{server}}{{item.link}}</th>
                 <th>{{item.link}}</th>
             </tr>
         </tbody>

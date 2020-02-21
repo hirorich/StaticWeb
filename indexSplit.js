@@ -2,7 +2,8 @@
 var vm=new Vue({
     el:'#app',
     data:{
-        items:[
+        checkidx:0
+        ,items:[
             {
                 name:'Vue',
                 url:'./Vue/'
@@ -38,11 +39,17 @@ var vm=new Vue({
             {
                 name:'Vue-Tabs',
                 url:'./Vue-Tabs/'
-            },
-            {
-                name:'indexSplit',
-                url:'./indexSplit.html'
             }
         ]
+    },
+    methods:{
+        select: function(index) {
+            this.checkidx=index;
+        }
+    },
+    computed:{
+        righturl: function() {
+            return this.items[this.checkidx].url;
+        }
     }
 });

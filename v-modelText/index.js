@@ -23,6 +23,7 @@ var inputinfo=new Vue({
 var vm=new Vue({
     el:'#app',
     data:{
+        server:"",
         items:[
             {
                 filename:"任天堂",
@@ -48,10 +49,13 @@ var vm=new Vue({
                 copyTextToClipboard(linkinfo.filename);
 
                 // link を別タブで開く
-                var link=linkinfo.link;
-                var url=serverinfo.servers[serverinfo.checkserver] + link
+                var url=vm.server + linkinfo.link
                 window.open(url, '_blank')
             }
         }
     }
 });
+
+window.onload = function(){
+    vm.server=serverinfo.servers[serverinfo.checkserver];
+};
