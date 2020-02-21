@@ -38,6 +38,10 @@ var vm=new Vue({
             {
                 name:'Vue-Tabs',
                 url:'./Vue-Tabs/'
+            },
+            {
+                name:'indexSplit',
+                url:'./indexSplit.html'
             }
         ]
     }
