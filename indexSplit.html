@@ -23,7 +23,7 @@
                 </thead>
                 <tbody id="app" v-cloak>
                     <tr v-for="(item, index) in items">
-                        <th @click="select(index)">{{item.name}}</th>
+                        <th :class="{'bg-primary': (index==checkidx)}" @click="select(index)">{{item.name}}</th>
                     </tr>
                 </tbody>
             </table>
