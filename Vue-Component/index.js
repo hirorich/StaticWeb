@@ -6,8 +6,10 @@ const index_components = {
     },
     template: `
         <div>
-            <input-components ref="input"></input-components>
-            <button class="btn btn-primary" v-on:click="sample_func()">サンプル関数</button>
+            <div class="collapse show" id="collapse_sample">
+                <input-components ref="input"></input-components>
+            </div>
+            <button class="btn btn-primary" v-on:click="sample_func()" data-toggle="collapse" data-target="#collapse_sample">サンプル関数</button>
             <button class="btn btn-primary" v-on:click="add_func()">追加</button>
             <table-components ref="table"></table-components>
         </div>
