@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <link rel="stylesheet" href="../common/bootstrap-4.3.1-dist/css/bootstrap.min.css">
+    <script src="../common/jquery/jquery-3.4.1.min.js"></script>
+    <script src="../common/vue-2.6.10/dist/vue.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="../common/v-cloak.css">
+    <link rel="stylesheet" type="text/css" href="./index.css">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <div class="left-box">
+            <div class="form-group">
+                <span class="label label-default">URL指定</span>
+                <input v-model="input_url" type="text" class="form-control">
+                <button class="btn btn-primary" v-on:click="set_url()">URL指定</button class="btn btn-primary">
+            </div>
+            <span class="label label-default">{{righturl}}</span>
+            <div class="form-group">
+                <button class="btn btn-primary" v-on:click="prev_page()"　:disabled="is_first_page">前ページ</button class="btn btn-primary">
+                <button class="btn btn-primary" v-on:click="next_page()">次ページ</button class="btn btn-primary">
+            </div>
+            <div class="form-group">
+                <span class="label label-default">タグ指定</span>
+                <input v-model="right_id" type="text" class="form-control">
+                <button class="btn btn-primary" v-on:click="download_image()">ダウンロード</button class="btn btn-primary">
+            </div>
+        </div>
+        <iframe class="right-box" :src="righturl" v-cloak></iframe class="right-box">
+    </div>
+
+    <!-- Vue定義 -->
+    <script src="index.js"></script>
+
+    <script src="../common/popper.js-1.16.0/dist/umd/popper.min.js"></script>
+    <script src="../common/bootstrap-4.3.1-dist/js/bootstrap.min.js"></script>
+</body>
+</html>
