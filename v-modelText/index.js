@@ -46,7 +46,7 @@ var vm=new Vue({
                 var linkinfo=this.items[index];
 
                 // filename をクリップボードにコピーする
-                copyTextToClipboard(linkinfo.filename);
+                copy_to_clipboard(linkinfo.filename);
 
                 // link を別タブで開く
                 var url=vm.server + linkinfo.link
